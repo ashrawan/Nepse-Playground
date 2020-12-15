@@ -1,0 +1,10 @@
+<nb-card>
+  <nb-card-header>{{title}}</nb-card-header>
+  <nb-card-body>
+    <input #inputVal nbInput class="form-control" (keyup.enter)="submit(inputVal.value)" [(ngModel)]="value">
+  </nb-card-body>
+  <nb-card-footer>
+    <button class="cancel" nbButton status="danger" (click)="cancel()">Cancel</button>
+    <button class="ml-2" nbButton status="success" (click)="submit(inputVal.value)">Submit</button>
+  </nb-card-footer>
+</nb-card>

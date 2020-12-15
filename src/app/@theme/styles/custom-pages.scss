@@ -1,0 +1,20 @@
+@import 'src/app/@theme/styles/theme/themes';
+
+// Courses Page
+.infinite-cards {
+  nb-card {
+    &.own-scroll {
+      height: 100vh;
+    }
+  }
+}
+
+.course-title-link {
+  cursor: pointer;
+  color: nb-theme(color-info-400);
+
+  &:hover {
+    color: nb-theme(color-primary-500);
+  }
+}
+

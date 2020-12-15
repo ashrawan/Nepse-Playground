@@ -1,0 +1,14 @@
+
+// TODO
+
+Sector -> Filter Options using sector
+
+
+Pull Dividend history and Right Share History
+https://www.sharesansar.com/company/nmfbs
+
+Finalize Simple Charts, Candle chart and hover functionality
+
+
+(See Video on youtube regarding stock)
+(Research and generate data/calculation)
