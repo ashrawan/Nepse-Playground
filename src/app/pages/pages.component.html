@@ -1,0 +1,19 @@
+<nb-layout>
+
+  <nb-layout-header fixed>
+    <app-custom-header></app-custom-header>
+  </nb-layout-header>
+
+  <nb-sidebar class="menu-sidebar" responsive start>
+    <nb-menu [items]="menu"></nb-menu>
+  </nb-sidebar>
+
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+    <app-custom-footer></app-custom-footer>
+  </nb-layout-footer>
+
+</nb-layout>

@@ -1,0 +1,60 @@
+<nb-card>
+    <nb-card-header>All Stock Profit Difference</nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="stockDiffForm" (ngSubmit)="onFormSubmission()" novalidate>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="inputprevdate" class="label">Select Date</label>
+                        <input type="date" nbInput fullWidth id="inputprevdate" class="form-control"
+                               [status]="this.stockDiffForm.controls['date'].valid ? '' : 'danger'"
+                               formControlName="date"/>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="inputinvestmentAmount" class="label">Investment Amount</label>
+                        <input type="number" nbInput fullWidth id="inputinvestmentAmount" class="form-control"
+                               [status]="this.stockDiffForm.controls['investmentAmount'].valid ? '' : 'danger'"
+                               formControlName="investmentAmount"/>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex w-100">
+                <span class="flex-grow-1"></span>
+                <button type="submit" nbButton status="info">Show Data</button>
+            </div>
+        </form>
+
+        <div *ngIf="selectedDateStockPriceData && selectedDateStockPriceData.length > 0" class="table-responsive">
+            <table class="table table-hover table-striped table-bordered">
+                <thead class="table-primary">
+                <td>S.N</td>
+                <td>Symbol</td>
+                <td>MaxPrice</td>
+                <td>MinPrice</td>
+                <td>TotalTradeAmount</td>
+                <td>TotalTradeShares</td>
+                <td>TotalTransactions</td>
+                <td>ClosePrice</td>
+                <td>Current Price</td>
+                <td>StockCount</td>
+                </thead>
+                <tbody>
+                <tr *ngFor="let sp of selectedDateStockPriceData; let i = index">
+                    <td>{{i+1}}</td>
+                    <td [nbTooltip]=sp.company.name>{{sp.company.symbol}}</td>
+                    <td>{{sp.maxPrice}}</td>
+                    <td>{{sp.minPrice}}</td>
+                    <td>{{sp.totalTradeAmount}}</td>
+                    <td>{{sp.totalTradeShares}}</td>
+                    <td>{{sp.totalTransactions}}</td>
+                    <td>{{sp.closePrice}}</td>
+                    <td>{{todayCWStockPriceData[sp.companyId] ? todayCWStockPriceData[sp.companyId].closePrice : '-'}}</td>
+                    <td>{{math.floor(calculationData.investmentAmount / sp.closePrice)}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </nb-card-body>
+</nb-card>

@@ -1,0 +1,23 @@
+
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~@ng-select/ng-select/themes/material.theme.css";
+
+// ======= Nebular Theme - to customize theme, use themes.scss ===========
+@import "~@nebular/theme/styles/prebuilt/default.css";
+
+/*
+//@import 'theme/themes';
+
+@import '~@nebular/theme/styles/globals';
+
+// install the framework and custom global styles
+@include nb-install() {
+
+  // framework global styles
+  @include nb-theme-global();
+};
+*/
+
+// ===================================================
+
+@import "custom-pages";

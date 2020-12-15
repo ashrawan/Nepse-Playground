@@ -1,0 +1,67 @@
+<div>
+    <nb-card>
+
+        <nb-card-header>
+            <div>
+
+                <form [formGroup]="tradingSectionForm" (ngSubmit)="onFormSubmission()" novalidate>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <ng-select *ngIf="companies"
+                                           class="w-100 mt-2"
+                                           id="inputcompany"
+                                           [items]="companies"
+                                           [closeOnSelect]="true"
+                                           [hideSelected]="true"
+                                           bindLabel="name"
+                                           placeholder="Select Company"
+                                           formControlName="company">
+                                </ng-select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputfromdate" class="label">Select Date</label>
+                                <input type="date" nbInput fullWidth id="inputfromdate" class="form-control"
+                                       [status]="this.tradingSectionForm.controls['startDate'].valid ? '' : 'danger'"
+                                       formControlName="startDate"/>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputtodate" class="label">Select Date</label>
+                                <input type="date" nbInput fullWidth id="inputtodate" class="form-control"
+                                       [status]="this.tradingSectionForm.controls['endDate'].valid ? '' : 'danger'"
+                                       formControlName="endDate"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex w-100">
+                        <span class="flex-grow-1"></span>
+                        <button type="submit" nbButton hero status="info" [disabled]="disableSubmit">Populate</button>
+                    </div>
+                </form>
+            </div>
+            <app-nodata-info-status [title]="''"></app-nodata-info-status>
+        </nb-card-header>
+
+        <nb-card-body>
+            <div>
+                <ng-container>
+                    <div id="chart">
+                        <apx-chart
+                            #chart
+                            [series]="candleChartOptions.series"
+                            [chart]="candleChartOptions.chart"
+                            [xaxis]="candleChartOptions.xaxis"
+                            [yaxis]="candleChartOptions.yaxis"
+                            [title]="candleChartOptions.title"></apx-chart>
+                    </div>
+                </ng-container>
+
+            </div>
+
+        </nb-card-body>
+    </nb-card>
+</div>
