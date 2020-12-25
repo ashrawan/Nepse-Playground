@@ -8,8 +8,8 @@ import {Observable, of} from 'rxjs';
 export class UserService {
 
   private mockUsers = {
-    jack: {fullName: 'nepsestock User', username: 'nepsestock', position: 'Student', picture: 'assets/images/jack.png'},
-    kate: {fullName: 'Kate Hasvil', username: 'Kate', position: 'Student', picture: 'assets/images/kate.png'},
+    jack: {fullName: 'Nepse User', username: 'testuser', position: 'Student', picture: 'assets/images/kitten-default.png'},
+    kate: {fullName: 'Kate Hasvil', username: 'Kate', position: 'Student', picture: 'assets/images/kitten-default.png'},
   };
 
   constructor() {

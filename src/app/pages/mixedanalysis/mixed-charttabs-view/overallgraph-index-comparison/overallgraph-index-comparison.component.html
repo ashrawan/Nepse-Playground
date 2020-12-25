@@ -1,0 +1,53 @@
+<div>
+    <nb-card>
+
+        <nb-card-header>
+            <div class="d-flex align-items-center">
+                <div class="w-100 pr-5">
+                    <ng-select *ngIf="companies"
+                               class="w-100 mt-2"
+                               [items]="companies"
+                               [multiple]="true"
+                               [closeOnSelect]="false"
+                               [hideSelected]="true"
+                               bindLabel="name"
+                               placeholder="Select Company"
+                               (add)="onAdd($event)"
+                               (remove)="onRemove($event)"
+                               (change)="onChange($event)"
+                               [(ngModel)]="multiSelectCompany">
+                    </ng-select>
+                </div>
+                <div class="ml-auto">
+                    <button nbButton hero status="info" (click)="fetchGraphMultiData()" [disabled]="disableSubmit">Populate</button>
+                </div>
+            </div>
+            <app-nodata-info-status [title]="''"></app-nodata-info-status>
+        </nb-card-header>
+
+        <nb-card-body>
+            <div>
+                <ng-container>
+                    <div id="chart">
+                        <apx-chart
+                            #chart
+                            [series]="multiLineChartOptions.series"
+                            [chart]="multiLineChartOptions.chart"
+                            [xaxis]="multiLineChartOptions.xaxis"
+                            [stroke]="multiLineChartOptions.stroke"
+                            [tooltip]="multiLineChartOptions.tooltip"
+                            [dataLabels]="multiLineChartOptions.dataLabels"
+                            [legend]="multiLineChartOptions.legend"
+                            [markers]="multiLineChartOptions.markers"
+                            [grid]="multiLineChartOptions.grid"
+                            [yaxis]="multiLineChartOptions.yaxis"
+                            [title]="multiLineChartOptions.title"
+                        ></apx-chart>
+                    </div>
+                </ng-container>
+
+            </div>
+
+        </nb-card-body>
+    </nb-card>
+</div>

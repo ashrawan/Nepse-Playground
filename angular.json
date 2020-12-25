@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "nepsestock-UI"
+    }
+  },
+  "defaultProject": "nepsestock-UI",
+  "cli": {
+    "analytics": "e4c9c2d2-ec0c-4a45-a63a-3b5cde8992ce"
+  }
 }

@@ -1,0 +1,31 @@
+
+.table-responsive {
+  height: 75vh;
+  overflow: scroll;
+}
+
+thead tr:nth-child(1) th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+//.table-striped tbody tr:nth-of-type(odd) {
+//  background-color: rgb(20 51 82 / 70%);
+//  color: white;
+//}
+//
+//.table-striped tbody tr:nth-of-type(even) {
+//  background-color: rgb(71 134 197 / 50%);
+//}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}

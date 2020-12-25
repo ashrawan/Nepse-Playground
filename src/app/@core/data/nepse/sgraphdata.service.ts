@@ -69,7 +69,7 @@ export class SgraphdataService {
     }
 
     getCandleTradingGraphData(companyId: number, startDate: any, endDate: any): Observable<Array<any>> {
-        const URL = CoreConstant.API_SECURED_ENDPOINT + '/stocks/trading?id=' + companyId + '&startDate=' + startDate + '&endDate=' + endDate;
+        const URL = CoreConstant.API_SECURED_ENDPOINT + '/stocks/trading?companyId=' + companyId + '&startDate=' + startDate + '&endDate=' + endDate;
         const observableFormattedNepseData = this.http
             .get<Array<any>>(URL)
             .pipe(

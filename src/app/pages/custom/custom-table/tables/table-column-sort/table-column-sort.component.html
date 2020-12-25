@@ -1,0 +1,12 @@
+<ng-container *ngIf='direction === "asc"'>
+    <nb-icon icon="arrow-downward-outline" class="text-white"></nb-icon>
+    <nb-icon icon="arrow-upward-outline" status="basic"></nb-icon>
+</ng-container>
+<ng-container *ngIf='direction === "desc"'>
+    <nb-icon icon="arrow-downward-outline" status="basic"></nb-icon>
+    <nb-icon icon="arrow-upward-outline" class="text-white"></nb-icon>
+</ng-container>
+<ng-container *ngIf='!direction'>
+    <nb-icon icon="arrow-downward-outline" status="basic"></nb-icon>
+    <nb-icon icon="arrow-upward-outline" status="basic"></nb-icon>
+</ng-container>

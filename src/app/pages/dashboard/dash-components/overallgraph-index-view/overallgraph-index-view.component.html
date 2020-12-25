@@ -1,0 +1,73 @@
+<div class="col-12">
+
+    <nb-card>
+        <nb-card-header>
+            <div class="d-flex">
+                <span>Index Overview</span>
+                <span class="text-hint small ml-auto"><span class="text-danger">Note: </span>Data points wont be plotted for missing data</span>
+            </div>
+        </nb-card-header>
+        <nb-card-header>
+            <div class="d-flex w-100 align-items-center">
+                <div class="d-flex w-50 justify-content-start">
+                    <ng-select *ngIf="companies"
+                               class="w-100"
+                               id="inputcompany"
+                               [items]="companies"
+                               [closeOnSelect]="true"
+                               [hideSelected]="true"
+                               bindLabel="name"
+                               placeholder="Select Company"
+                               [(ngModel)]="selectedCompanyNgModel"
+                               (ngModelChange)="onCompanyChange($event)">
+                    </ng-select>
+                </div>
+                <span class="pl-4 font-weight-bold d-flex flex-grow-1">
+<!--                    {{selectedCompanyNgModel ? selectedCompanyNgModel.name : 'Overall Index' }}-->
+                    </span>
+                <div class="d-flex justify-content-end h-75">
+                    <button (click)="updateOptions( '1W' )" [class.active]="activeOptionButton=='1W'">1W</button>
+                    <button (click)="updateOptions( '1M' )" [class.active]="activeOptionButton=='1M'">1M</button>
+                    <button (click)="updateOptions( '1Q' )" [class.active]="activeOptionButton=='1Q'">1Q</button>
+                    <button (click)="updateOptions( '1Y' )" [class.active]="activeOptionButton=='1Y'">1Y</button>
+                </div>
+            </div>
+        </nb-card-header>
+        <nb-card-body>
+
+            <ng-container>
+<!--                <app-linechart-timeseries *ngIf="graphOverallSeriesData"-->
+<!--                                          [inputData]="graphOverallSeriesData"-->
+<!--                                          [options]="updateOptionsData"-->
+<!--                                          [graphTitle]="'Overall NEPSE Index'"-->
+<!--                                          [name]="'Overall NEPSE Index'">-->
+<!--                </app-linechart-timeseries>-->
+<!--                <app-linechart-timeseries *ngIf="selectedCompanyNgModel && graphCompanySeriesData"-->
+<!--                                          [inputData]="graphCompanySeriesData"-->
+<!--                                          [options]="updateOptionsData"-->
+<!--                                          [graphTitle]="'Company Index'"-->
+<!--                                          [name]="chartDisplayName">-->
+<!--                </app-linechart-timeseries>-->
+
+                <div id="chart">
+                    <apx-chart
+                        #chart
+                        [series]="multiLineChartOptions.series"
+                        [chart]="multiLineChartOptions.chart"
+                        [xaxis]="multiLineChartOptions.xaxis"
+                        [stroke]="multiLineChartOptions.stroke"
+                        [tooltip]="multiLineChartOptions.tooltip"
+                        [dataLabels]="multiLineChartOptions.dataLabels"
+                        [legend]="multiLineChartOptions.legend"
+                        [markers]="multiLineChartOptions.markers"
+                        [grid]="multiLineChartOptions.grid"
+                        [yaxis]="multiLineChartOptions.yaxis"
+                        [title]="multiLineChartOptions.title"
+                    ></apx-chart>
+                </div>
+            </ng-container>
+
+        </nb-card-body>
+    </nb-card>
+
+</div>

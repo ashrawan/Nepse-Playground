@@ -14,13 +14,11 @@ export class StockService {
     }
 
     getAllCompanies(companyFilter: Company): Observable<Company[]> {
-        // http://127.0.0.1:3000/api/companys/filter?companyCode=131
         return this.http
             .get<Company[]>(CoreConstant.API_SECURED_ENDPOINT + '/companys/filter');
     }
 
     getAllStockPrice(stockPriceFilter: StockPrice): Observable<StockPrice[]> {
-        // http://127.0.0.1:3000/api/stocks/filter?date=2020-10-20
         return this.http
             .get<StockPrice[]>(CoreConstant.API_SECURED_ENDPOINT + '/stocks/filter/', {
                 params: StockUtil.buildPageParams(stockPriceFilter)
