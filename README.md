@@ -1,13 +1,19 @@
+ Github Link:
+- [ ] Backend: https://github.com/ashrawan/Nepse-Playground-Backend  (NodeJS)
+- [x] Frontend: https://github.com/ashrawan/Nepse-Playground  
 
 ###  Nepsestock-Playground-UI based on Angular 10+
 
 | <a target="_blank" href="https://#">![NEPSE-Playground-UI](./src/assets/nepsePlaygroundui.PNG)</a> |
 | --- |
-|  NEPSE Playground UI |
+|  Nepse Playground UI |
 
 ### Demo
 
 <a target="_blank" href="https://#">On Development</a>
+
+Run Nepse-Playground-Backend to test UI
+https://github.com/ashrawan/Nepse-Playground-Backend
 
 ## Documentation
 #### Overview:  
