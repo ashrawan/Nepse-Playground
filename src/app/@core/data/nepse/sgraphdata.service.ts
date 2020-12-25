@@ -4,7 +4,6 @@ import {combineLatest, Observable, of} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {CoreConstant} from '../../utils/core-constant';
 import {HttpClient} from '@angular/common/http';
-import {StockUtil} from './StockUtil';
 import {DummyData} from './DummyData';
 
 @Injectable({
