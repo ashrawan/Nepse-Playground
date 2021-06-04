@@ -4,7 +4,7 @@
 
 ###  Nepsestock-Playground-UI based on Angular 10+
 
-| <a target="_blank" href="https://#">![NEPSE-Playground-UI](./src/assets/nepsePlaygroundui.PNG)</a> |
+| <a target="_blank" href="https://nepsepro.tk">![NEPSE-Playground-UI](./src/assets/nepsePlaygroundui.PNG)</a> |
 | --- |
 |  Nepse Playground UI |
 
