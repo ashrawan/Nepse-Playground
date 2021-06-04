@@ -10,7 +10,7 @@
 
 ### Demo
 
-<a target="_blank" href="https://#">On Development</a>
+<a target="_blank" href="https://nepsepro.tk/">https://nepsepro.tk/</a>
 
 Run Nepse-Playground-Backend to test UI
 https://github.com/ashrawan/Nepse-Playground-Backend
